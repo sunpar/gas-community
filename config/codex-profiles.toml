@@ -1,0 +1,18 @@
+[profiles.agent-high]
+model_reasoning_effort = "high"
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+
+[profiles.agent-medium]
+model_reasoning_effort = "medium"
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+
+[profiles.agent-low]
+model_reasoning_effort = "low"
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+

@@ -1,0 +1,17 @@
+[project]
+name = "gas-community"
+version = "0.1.0"
+description = "Local markdown task queue for Codex CLI workers"
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

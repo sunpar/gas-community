@@ -1,0 +1,8 @@
+.codex-queue/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.pylint-cache/
+.DS_Store
+
