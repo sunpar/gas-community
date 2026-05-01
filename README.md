@@ -24,31 +24,40 @@ The core loop is:
 
 ## Install
 
-Copy or vendor the `scripts/` directory into a Git repository where you want to run
-queued Codex jobs.
+Run the installer with the Git repository where you want to run queued Codex
+jobs:
 
-Add queue state to that repo's `.gitignore`:
+```bash
+./scripts/install_codex_queue.sh /path/to/target/repo
+```
+
+The installer copies the queue runner scripts into `scripts/`, copies the Codex
+profile snippet into `config/codex-profiles.toml`, and ensures queue state is
+ignored by the target repo's `.gitignore`:
 
 ```gitignore
 .codex-queue/
 ```
 
-Add Codex profiles to `~/.codex/config.toml`:
+Add the installed Codex profiles to `~/.codex/config.toml`:
 
 ```toml
 [profiles.agent-high]
-model_reasoning_effort = "high"
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 
 [profiles.agent-medium]
+model = "gpt-5.5"
 model_reasoning_effort = "medium"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 
 [profiles.agent-low]
+model = "gpt-5.5"
 model_reasoning_effort = "low"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
@@ -127,9 +136,11 @@ agent. Treat queued markdown files as privileged input.
 Keep sandboxing enabled for unattended runs:
 
 ```bash
---sandbox workspace-write --ask-for-approval never
+--sandbox workspace-write
 ```
+
+Keep `approval_policy = "never"` in the installed Codex profiles so unattended
+workers do not pause for prompts.
 
 The wrapper owns Git commits and merges. Codex is explicitly instructed not to
 commit, merge, push, delete branches, remove worktrees, or edit queue files.
-

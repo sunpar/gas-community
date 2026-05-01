@@ -20,6 +20,7 @@ Run the checks that match your changes:
 python3 -m py_compile scripts/codex_queue_worker.py
 bash -n scripts/start_codex_workers.sh
 bash -n scripts/add_codex_task.sh
+bash -n scripts/install_codex_queue.sh
 python3 -m pytest
 ```
 
@@ -29,4 +30,3 @@ If Ruff is available:
 ruff check .
 ruff format --check .
 ```
-

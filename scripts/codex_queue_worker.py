@@ -293,8 +293,6 @@ def run_codex(
         f"agent-{claim.level}",
         "--sandbox",
         "workspace-write",
-        "--ask-for-approval",
-        "never",
         "--json",
         "--output-last-message",
         str(final_message),

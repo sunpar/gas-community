@@ -1,18 +1,20 @@
 [profiles.agent-high]
-model_reasoning_effort = "high"
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 
 [profiles.agent-medium]
+model = "gpt-5.5"
 model_reasoning_effort = "medium"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 
 [profiles.agent-low]
+model = "gpt-5.5"
 model_reasoning_effort = "low"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 web_search = "cached"
-
